@@ -1,0 +1,33 @@
+            <!-- Pipes -->
+            <h2>{{name}}</h2>
+            <h2>{{name | lowercase}}</h2>
+            <h2>{{name | uppercase}}</h2>
+            <h2>{{name | slice:2:8}}</h2>
+
+            
+
+            <h2>{{messagess | titlecase}}</h2>
+
+            <h2>{{datas | json}}</h2>
+
+
+            <h2>{{5.677008 | number:'2.2-2'}}</h2> <!--05.68 -->
+            <h2>{{5.677008 | number:'1.2-2'}}</h2> <!--5.68 -->
+            <h2>{{5.677008 | number:'1.2-3'}}</h2> <!--5.67 -->
+
+
+            <h2>{{0.5 | percent}}</h2> <!--50% -->
+
+
+            <h2>{{0.5 | currency}}</h2> <!--$ 0.50 -->
+            <h2>{{0.5 | currency: 'GBP'}}</h2> <!-- £ 0.50 -->
+            <h2>{{0.5 | currency: 'EUR':'code'}}</h2> <!-- EUR0.50 -->
+            <h2>{{0.5 | currency: 'EUR'}}</h2> <!-- €0.50 -->
+            <h2>{{0.5 | currency: 'GBP':'code'}}</h2> <!-- GBP0.50  -->
+            
+            
+            <h2>{{date}}</h2> <!-- Wed May 18 2022 19:01:37 GMT+0100 (GMT+01:00)  --> 
+            <h2>{{date | date}}</h2> <!-- May 18, 2022 --> 
+            <h2>{{date | date:'short'}}</h2> <!-- 5/18/22, 7:02 PM --> 
+            <h2>{{date | date:'shortTime'}}</h2> <!-- 7:02 PM --> 
+            <h2>{{date | date:'shortDate'}}</h2> <!-- 5/18/22 --> 
