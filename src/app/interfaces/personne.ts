@@ -1,5 +1,6 @@
 export interface IPersonne{
     id:number;
-    title:string;
-    completed:string;
+    email:string;
+    password:string;
+    username:string;
 }

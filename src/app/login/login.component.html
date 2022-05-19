@@ -5,11 +5,11 @@
         <label class="title">Login</label>
         <form>
             <div class="input-group">
-                <input required type="text" #eml name="text" autocomplete="off" (input)="fillEmail(eml.value)" class="input">
+                <input required type="text" #eml name="text" autocomplete="off" (input)="fillData('email',eml.value)" class="input">
                 <label class="user-label">Email</label>
             </div>
             <div class="input-group">
-                <input required type="password" #pass class="input" autocomplete="off" (input)="fillPass(pass.value)">
+                <input required type="password" #pass class="input" autocomplete="off" (input)="fillData('password',pass.value)">
                 <label class="user-label">Password</label>
             </div>
             <div class="chbx">

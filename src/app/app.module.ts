@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LogenService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule
   ],
   providers: [
-    PersonneService
+    PersonneService,
+    LogenService
   ],
   bootstrap: [AppComponent]
 })

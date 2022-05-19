@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { LogenService } from '../services/login.service';
 import { PersonneService } from '../services/personne.service';
 
 @Component({
@@ -18,6 +19,8 @@ export class LoginComponent implements OnInit {
     public name="SoliCode";
     public messagess='developpement mobile';
 
+    public usersData:any=[];
+
     public datas:any=[];
 
     public date=new Date();
@@ -28,7 +31,7 @@ export class LoginComponent implements OnInit {
         this.childEvent.emit(this.datas);
     };
 
-  constructor(private personneService:PersonneService) {};
+  constructor(private personneService:PersonneService,private loginService:LogenService) {};
 
   public genders = ['Homme','Femme','Autre'];
 
@@ -36,16 +39,31 @@ export class LoginComponent implements OnInit {
 
   public data="";
 
-  public user={
-      email:'',
-      password:'',
-  };
+  public object=new Map();
+
+  fillData(key:any,value:any){
+      this.object.set(key,value);
+  };  
 
   public color='';
 
   rem=()=>{
       console.log('hello');
   }
+
+  listing(){
+      let v=false;
+      if(this.object.get('email') && this.object.get('password')){
+        this.usersData.map((element:any) => {
+            // console.log(element.email,this.email);
+            if(element.email === this.object.get('email') && element.password === this.object.get('password')) v=true;
+          });
+
+          if(v===false) console.log('incorrect email || password !');
+          else console.log('Success!');
+
+      }else console.log('Fill All Required Field !');
+  };
 
   ngOnInit(): void {
 
@@ -54,6 +72,8 @@ export class LoginComponent implements OnInit {
             console.error(error);
             this.errorMessage = error;
         });
+
+        this.loginService.login().subscribe(d => this.usersData = d, error => console.log(error.message) );
 
     // fetch('https://jsonplaceholder.typicode.com/todos/3',{
     //     headers:{'content-type':'json'},
@@ -65,14 +85,6 @@ export class LoginComponent implements OnInit {
     
   };
 
-  fillPass(value:any){
-      this.user.password=value;
-  };
-
-  fillEmail(value:any){
-    this.user.email=value;
-  };
-
   login(){
     //   if(this.user.password && this.user.email){
     //     this.data="";
@@ -81,6 +93,7 @@ export class LoginComponent implements OnInit {
     //     this.data="";
     //alert('hello')
     //   }
+    this.listing()
   };
 
   checkeding(){
