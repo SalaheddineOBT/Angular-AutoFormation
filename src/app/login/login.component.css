@@ -1,0 +1,19 @@
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.lg-content{
+    display: grid;
+    background-color: rgb(248, 242, 234);
+    padding: 1.7rem;
+    -webkit-box-shadow: 0px 2px 13px 2px rgba(0, 0, 0, 0.582); 
+    box-shadow: 0px 2px 13px 2px rgba(0, 0, 0, 0.425);
+}
+.lg-content form{
+    display: grid;
+}
+button {
+    margin-top: 1rem;
+}

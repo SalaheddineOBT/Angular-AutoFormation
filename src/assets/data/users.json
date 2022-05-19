@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "username":"Hafsa",
+        "email":"h@ff.ff",
+        "password":"f123",
+        "age":25
+    },
+    {
+        "id":2,
+        "username":"salah",
+        "email":"h@ss.ss",
+        "password":"s123",
+        "age":20
+    },
+    {
+        "id":3,
+        "username":"asmae",
+        "email":"h@aa.aa",
+        "password":"a123",
+        "age":22
+    }
+]

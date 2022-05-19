@@ -1,0 +1,12 @@
+.danger{
+    color: red;
+}
+.success{
+    color: forestgreen;
+}
+.italicFont{
+    font-style: italic;
+}
+.normalFont{
+    font-style: normal;
+}

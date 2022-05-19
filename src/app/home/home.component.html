@@ -1,0 +1,24 @@
+<p>home works {{name.toUpperCase()}}!</p>
+<h5 [id]="myId">{{'welcom : '+(4-5)}}</h5>
+<h5 id="{{myId}}">{{'welcom : '+(4-5)}}</h5>
+<h4>{{getUser()}}</h4>
+<input bind-disabled="isdisabled" value="hello world !" />
+<button (click)="changetoable()" >click</button>
+<hr />
+<label class="danger">It's Danger Class !</label><br />
+<label [class]="dangerClass">It's Danger Class !</label><br />
+<label class="success" [class]="italicClass">It's Success & Italic Class !</label><br />
+
+<label [class.success]="hasErr">It's Success Class !</label><br />
+
+<button (click)="tooggll($event)">Clicked</button>
+
+<hr />
+
+<label [style.color]="'#222'" >hello salah !</label>
+
+<select #gender (change)="watch(gender.value)">
+    <option>Homme</option>
+    <option>Femme</option>
+    <option>Autre</option>
+</select>

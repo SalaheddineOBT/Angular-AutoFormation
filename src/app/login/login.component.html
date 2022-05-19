@@ -1,0 +1,62 @@
+<div class="login">
+    <div class="lg-content">
+
+        <label class="title">Login</label>
+        <form>
+            <div class="input-group">
+                <input required type="text" #eml name="text" autocomplete="off" (input)="fillEmail(eml.value)" class="input">
+                <label class="user-label">Email</label>
+            </div>
+            <div class="input-group">
+                <input required type="password" #pass class="input" autocomplete="off" (input)="fillPass(pass.value)">
+                <label class="user-label">Password</label>
+            </div>
+            <div class="chbx">
+                <label class="cont">
+                    <input type="checkbox" [checked]="check">
+                    <span></span>
+                </label>
+                <span class="text" (click)="checkeding()">Remember Me ?</span>
+            </div>
+            <button (click)="login()">
+                <span>LOGIN</span>
+            </button>
+
+            <!-- <h4 *ngIf="data;then thenBlock else elseBlock"></h4>
+
+            <ng-template #thenBlock>
+                <h4 [style.color]="'green'">
+                    {{data}}
+                </h4>
+            </ng-template>
+
+            <ng-template #elseBlock>
+                <h4 [style.color]="'red'">
+                    fill all required fields !
+                </h4>
+            </ng-template> -->
+
+            <!-- <p>{{data ? data : null}}</p> -->
+
+            <!-- <div [ngSwitch]="color" [style.color]="color">
+                <div *ngSwitchCase="'red'">Its red !</div>
+                <div *ngSwitchCase="'green'">Its green !</div>
+                <div *ngSwitchCase="'aqua'">Its aqua !</div>
+                <div *ngSwitchCase="'orange'">Its orange !</div>
+                <div *ngSwitchDefault>white</div>
+            </div> -->
+
+            <!-- <select #gender (change)="handleChanging(gender.value)">
+                <option>Select gender</option>
+                <option *ngFor="let gender of genders; index as i; first as f; last as l; odd as o; even as e">{{i}} {{f}} {{l}} {{o}} {{e}} {{gender}} </option>
+            </select> -->
+
+            <!-- <h5>Welcome In <label [style.color]="'blue'">{{comeData}}</label></h5>
+
+            <input type="button" value="Send To Parent" (click)="sendtoparent()" /> -->
+
+            <!-- <input type="text" (change)="rem()" /> -->
+
+        </form>
+    </div>
+</div>

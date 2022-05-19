@@ -1,0 +1,29 @@
+<!-- <style>
+    .special{
+        color:cornflowerblue;
+    }
+</style>
+
+<h1>hello world !</h1>
+<h2>Welcome to <span class="special">{{title}}</span> !</h2>
+<input #phone placeholder="Enter Your Phone Number : " (input)="handleChange(phone.value)" />
+<button (click)="handleClick()">click me</button> -->
+
+<!-- <app-home></app-home> -->
+<!-- <ul>
+    <li *ngFor="let item of data">
+        <ul>
+            <li>{{item.title}}</li>
+            <li>{{item.completed}}</li>
+            <li>{{item.id}}</li>
+        </ul>
+        <br />
+    </li>
+</ul> -->
+
+<!-- <button (click)="alertHello()">click me</button> -->
+
+<app-nav></app-nav>
+
+<app-login (childEvent)="data=$event" [title]="title"></app-login>
+
