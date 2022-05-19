@@ -9,6 +9,8 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
+  public active='active';
+
   ngOnInit(): void {
   }
 

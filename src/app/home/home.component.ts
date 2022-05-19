@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() { };
+  public username='';
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.username ? null : null;
+  };
 
   public name="Salaheddine";
   public myId='testid'
@@ -33,7 +36,7 @@ export class HomeComponent implements OnInit {
 
   getUser(){
       return 'Hello '+this.name;
-  }
+  };
 
   tooggll(event:any){
     console.log(event.type);

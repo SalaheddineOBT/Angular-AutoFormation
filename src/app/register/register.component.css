@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    padding-top: 7rem;
 }
 .rg-content{
     display: grid;
@@ -13,4 +14,7 @@
 }
 .rg-content form{
     display: grid;
+}
+button {
+    margin-top: 1.5rem;
 }

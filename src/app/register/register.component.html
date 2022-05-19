@@ -1,24 +1,29 @@
+<app-nav></app-nav>
 <div class="register">
     <div class="rg-content">
         <label class="title">Register</label>
         <form>
             <div class="input-group">
-                <input required type="text" #fullName name="text" autocomplete="off" class="input">
+                <input required type="text" #fullName name="text" autocomplete="off" class="input" (input)="fillData('fullName',fullName.value)">
                 <label class="user-label">Full Name</label>
+                <p [style.color]="'red'">{{error.fullName}}</p>
             </div>
             <div class="input-group">
-                <input required type="text" #email name="text" autocomplete="off" class="input">
+                <input required type="text" #email name="text" autocomplete="off" class="input" (input)="fillData('email',email.value)">
                 <label class="user-label">Email</label>
+                <p [style.color]="'red'">{{error.email}}</p>
             </div>
             <div class="input-group">
-                <input required type="password" #password name="text" autocomplete="off" class="input">
+                <input required type="password" #password name="text" autocomplete="off" class="input" (input)="fillData('password',password.value)">
                 <label class="user-label">Password</label>
+                <p [style.color]="'red'">{{error.password}}</p>
             </div>
             <div class="input-group">
-                <input required type="password" #confirmPassword name="text" autocomplete="off" class="input">
+                <input required="true" type="password" #confirmPassword name="text" autocomplete="off" class="input" (input)="fillData('confirmPassword',confirmPassword.value)">
                 <label class="user-label">Confirm Password</label>
+                <p [style.color]="'red'">{{error.confirmPassword}}</p>
             </div>
-            <button>
+            <button (click)="register()">
                 <span>REGISTER</span>
             </button>
         </form>

@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    padding-top: 7rem;
 }
 .lg-content{
     display: grid;
