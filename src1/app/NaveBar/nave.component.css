@@ -1,0 +1,22 @@
+.nav-content {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(245, 222, 179, 0.349);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+}
+
+li {
+    margin-left: 2.5rem;
+}
+
+img {
+    width: 8rem;
+}
