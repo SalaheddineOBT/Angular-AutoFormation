@@ -63,14 +63,14 @@
     {
       "id": 50,
       "name": "Bouches-du-Rhône",
-      "libelle": "departement 1",
+      "libelle": "departement 5",
       "region": "Provence-Alpes-Côte d'Azur",
       "photo":"https://share.america.gov/wp-content/uploads/2022/05/Ukraine_Mariupol_theater_war_damage_AP22094713545755-4.jpg"
     },
     {
       "id": 60,
       "name": "Territoire de Belfort",
-      "libelle": "departement 2",
+      "libelle": "departement 6",
       "region": "Bourgogne-Franche-Comté",
       "photo":"https://share.america.gov/wp-content/uploads/2021/05/service-pnp-cph-3c00000-3c04000-3c04900-3c04973v_Jews_New_York_City_Jewish_Rosh_Hashanah_immigration-1024x720.jpg"
     }
