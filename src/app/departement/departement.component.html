@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Departements</h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1 col-bold">ID</div>
+        <div class="col col-2 col-bold">Libelle</div>
+        <div class="col col-3 col-bold">Actions</div>
+      </li>
+      <li class="table-row"  *ngFor="let item of data">
+        <div class="col col-1" data-label="ID :">{{item.id}}</div>
+        <div class="col col-2" data-label="LIBELLE :">{{item.libelle}}</div>
+        <div class="col col-3" data-label="ACTIONS :">
+            <button class="button-75" role="button" type="button">
+                <span class="text">Details</span>
+            </button>
+        </div>
+      </li>
+    </ul>
+</div>

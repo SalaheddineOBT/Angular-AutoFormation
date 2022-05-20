@@ -13,7 +13,7 @@ export class LogenService{
         password:'',
     }
 
-    private url='http://localhost:3004/users';
+    private url='http://localhost:3002/users';
 
     constructor(private httpClient:HttpClient){};
 

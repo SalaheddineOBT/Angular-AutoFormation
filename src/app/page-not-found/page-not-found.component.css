@@ -31,8 +31,7 @@
     z-index: 9;
   }
 .circles p span { 
-    font-size: 20px;
-    vertical-align: top;   
+    font-size: 20px; 
 }
 .circles .circle.small {
     width: 140px;

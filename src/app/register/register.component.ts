@@ -11,6 +11,8 @@ export class RegisterComponent implements OnInit {
 
     public object=new Map();
 
+    public res:any;
+
     public error={
         email:'',
         password:'',
@@ -21,7 +23,14 @@ export class RegisterComponent implements OnInit {
     public personne={
         username:'',
         email:'',
+        password:''
+    };
+
+    public personned={
+        username:'',
+        email:'',
         password:'',
+        confirm:''
     };
 
     fillData(key:any,value:any){
@@ -34,25 +43,52 @@ export class RegisterComponent implements OnInit {
         //     console.log(key + ' : ' + value);
         // }
 
-        const res=Object.fromEntries(this.object); //Change Map Data to Json Format
+        this.res=Object.fromEntries(this.object); //Change Map Data to Json Format
         //console.log(res);
 
-        this.personne.email=res.email;
-        this.personne.username=res.fullName;
-        this.personne.password=res.confirmPassword
-
-        this.loginService.personne=this.personne;
-
-        this.loginService.register().subscribe((data:any) => {
-            console.log(data);
-        });
+        // console.log(Object.keys(res).length)
 
         // if(Object.keys(res).length===0){
-
+            
         // }
 
         // console.log(Object.keys(this.object).length);
-        // console.log(Object.keys(res).length===4 ? 'success !' : Object.keys(res).length);
+        if(Object.keys(this.res).length !== 4){ 
+            console.log('Fill All Required Fileds !') 
+        }
+        else{
+            this.personned.email=this.res.email;
+            this.personned.username=this.res.fullName;
+            this.personned.password=this.res.password;
+            this.personned.confirm=this.res.confirmPassword;
+
+            if(this.personned.confirm === this.personned.password){
+                this.personne.email=this.personned.email;
+                this.personne.username=this.personned.username;
+                this.personne.password=this.personned.confirm;
+
+                this.loginService.personne=this.personne;
+
+                this.loginService.register().subscribe((data:any) => {
+                    console.log(data);
+
+                    this.object=new Map();
+
+                    this.personne={
+                        username:'',
+                        email:'',
+                        password:''
+                    };
+                    this.personned={
+                        username:'',
+                        email:'',
+                        password:'',
+                        confirm:''
+                    };
+                });
+            } else console.log('Confirm Password Incorrect !');
+
+        }
 
     }
 

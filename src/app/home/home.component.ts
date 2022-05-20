@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { };
-  public username='';
+  constructor(private router:Router,private routAct:ActivatedRoute) { };
+  
+  @Input()
+  public username:any='';
 
   ngOnInit(): void {
-    this.username ? null : null;
+    let usernm=this.routAct.snapshot.paramMap.get('username');
+    let id=this.routAct.snapshot.paramMap.get('id');
+    console.log(usernm,id);
+    usernm ? this.username=this.routAct.snapshot.paramMap.get('username') : this.router.navigate(['/login']);
   };
 
   public name="Salaheddine";
@@ -49,5 +55,7 @@ export class HomeComponent implements OnInit {
   };
 
   genders=['Homme','Femme','Autre'];
+
+  navigateToDepart = () => this.router.navigate(['/departement']);
 
 }

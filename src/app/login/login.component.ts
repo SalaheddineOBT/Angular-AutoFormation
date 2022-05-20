@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { LogenService } from '../services/login.service';
 import { PersonneService } from '../services/personne.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
     public name="SoliCode";
     public messagess='developpement mobile';
 
+    public username='';
+
     public usersData:any=[];
 
     public datas:any=[];
@@ -31,7 +34,7 @@ export class LoginComponent implements OnInit {
         this.childEvent.emit(this.datas);
     };
 
-  constructor(private personneService:PersonneService,private loginService:LogenService) {};
+  constructor(private personneService:PersonneService,private loginService:LogenService,private router:Router) {};
 
   public genders = ['Homme','Femme','Autre'];
 
@@ -56,11 +59,24 @@ export class LoginComponent implements OnInit {
       if(this.object.get('email') && this.object.get('password')){
         this.usersData.map((element:any) => {
             // console.log(element.email,this.email);
-            if(element.email === this.object.get('email') && element.password === this.object.get('password')) v=true;
+            if(element.email === this.object.get('email') && element.password === this.object.get('password')){
+                v=true;
+                this.username=element.username;
+            }
           });
 
-          if(v===false) console.log('incorrect email || password !');
-          else console.log('Success!');
+          if(v===false){ console.log('incorrect email || password !'); }
+          else{
+              console.log('Success!');
+            //   this.router.navigate([
+            //       '/home',
+            //       {
+            //         username:this.username
+            //       }
+            //   ]);
+            this.router.navigate(['/home',this.username,'Home.php']);
+
+          }
 
       }else console.log('Fill All Required Field !');
   };

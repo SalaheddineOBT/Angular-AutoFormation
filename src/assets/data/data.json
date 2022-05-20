@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Hafsa",
+      "email": "h@ff.ff",
+      "password": "f123"
+    },
+    {
+      "id": 2,
+      "username": "salah",
+      "email": "h@ss.ss",
+      "password": "s123"
+    },
+    {
+      "id": 3,
+      "username": "asmae",
+      "email": "h@aa.aa",
+      "password": "a123"
+    },
+    {
+      "username": "salaheddine",
+      "email": "salah@obt2001.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "username": "anass harrou",
+      "email": "anassmohamed@gmail.com",
+      "password": "anass@2001",
+      "id": 5
+    }
+  ],
+  "departements": [
+    {
+      "id": 10,
+      "name":"",
+      "libelle": "departement 1",
+      "region":""
+    },
+    {
+      "id": 20,
+      "name": "Ain",
+      "libelle": "departement 2",
+      "name": "Ain",
+      "region": "Auvergne-Rhône-Alpes"
+    },
+    {
+      "id": 30,
+      "libelle": "departement 3",
+      "dep_name": "Aisne",
+      "region_name": "Hauts-de-France"
+    },
+    {
+      "id": 40,
+      "libelle": "departement 4",
+      "dep_name": "Alpes-Maritimes",
+      "region_name": "Provence-Alpes-Côte d'Azur"
+    },
+    {
+      "id": 50,
+      "libelle": "departement 1",
+      "dep_name": "Bouches-du-Rhône",
+      "region_name": "Provence-Alpes-Côte d'Azur"
+    },
+    {
+      "id": 60,
+      "libelle": "departement 2",
+      "dep_name": "Territoire de Belfort",
+      "region_name": "Bourgogne-Franche-Comté"
+    }
+  ]
+}
