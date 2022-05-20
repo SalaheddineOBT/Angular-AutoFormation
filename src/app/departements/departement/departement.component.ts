@@ -28,7 +28,8 @@ export class DepartementComponent implements OnInit {
   }
 
   naviateToDetails(id:any){
-    this.router.navigate(['/detailDepartement',id]);
+    // this.router.navigate(['/detailDepartement',id]);
+    this.router.navigate([id],{relativeTo : this.routeAct})
   };
 
   isSelected = (id:any) => {

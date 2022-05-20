@@ -6,6 +6,7 @@ import { ActivatedRoute,Router,ParamMap } from '@angular/router';
   templateUrl: './detailsdepartement.component.html',
   styleUrls: ['./detailsdepartement.component.css']
 })
+
 export class DetailsdepartementComponent implements OnInit {
 
   constructor(private routerAct:ActivatedRoute,private router:Router) { };
@@ -30,19 +31,20 @@ export class DetailsdepartementComponent implements OnInit {
 
   goPrev=()=>{
     let prevId=parseInt(this.id) - 10;
-    this.router.navigate(['/detailDepartement',prevId]);
+    this.router.navigate(['/departement',prevId]);
     this.ngOnInit()
   };
 
   goNext=()=>{
     let nextId=parseInt(this.id) + 10;
-    this.router.navigate(['/detailDepartement',nextId]);
+    this.router.navigate(['/departement',nextId]);
     this.ngOnInit()
   };
 
   goBack=() => {
       let selectedId=this.id ? this.id : null;
-      this.router.navigate(['/departement', { id:selectedId } ]);
+    //   this.router.navigate(['/departement', { id:selectedId } ]);
+      this.router.navigate(['../',{id:selectedId}],{relativeTo:this.routerAct});
   };
 
 }

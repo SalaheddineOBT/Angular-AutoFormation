@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DepartementComponent } from './departements//departement/departement.component';
+import { DepartmentContactComponent } from './departements/department-contact/department-contact.component';
+import { DepartmentOverviewComponent } from './departements/department-overview/department-overview.component';
 import { DetailsdepartementComponent } from './departements/detailsdepartement/detailsdepartement.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -21,8 +23,18 @@ const routes: Routes = [
         path:'departement',
         component:DepartementComponent
     },{
-        path:'detailDepartement/:id',
-        component:DetailsdepartementComponent
+        path:'departement/:id',
+        component:DetailsdepartementComponent,
+        children:[ 
+            {
+                path:'overview',
+                component:DepartmentOverviewComponent
+            },
+            {
+                path:'contact',
+                component:DepartmentContactComponent
+            },
+        ],
     },{
         path: '',
         redirectTo: '/login',
@@ -46,5 +58,7 @@ export const routingComponents=[
     RegisterComponent,
     PageNotFoundComponent,
     DepartementComponent,
-    DetailsdepartementComponent
+    DetailsdepartementComponent,
+    DepartmentOverviewComponent,
+    DepartmentContactComponent
 ];
