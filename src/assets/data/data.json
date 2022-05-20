@@ -42,32 +42,31 @@
       "id": 20,
       "name": "Ain",
       "libelle": "departement 2",
-      "name": "Ain",
       "region": "Auvergne-Rhône-Alpes"
     },
     {
       "id": 30,
+      "name": "Aisne",
       "libelle": "departement 3",
-      "dep_name": "Aisne",
-      "region_name": "Hauts-de-France"
+      "region": "Hauts-de-France"
     },
     {
       "id": 40,
+      "name": "Alpes-Maritimes",
       "libelle": "departement 4",
-      "dep_name": "Alpes-Maritimes",
-      "region_name": "Provence-Alpes-Côte d'Azur"
+      "region": "Provence-Alpes-Côte d'Azur"
     },
     {
       "id": 50,
+      "name": "Bouches-du-Rhône",
       "libelle": "departement 1",
-      "dep_name": "Bouches-du-Rhône",
-      "region_name": "Provence-Alpes-Côte d'Azur"
+      "region": "Provence-Alpes-Côte d'Azur"
     },
     {
       "id": 60,
+      "name": "Territoire de Belfort",
       "libelle": "departement 2",
-      "dep_name": "Territoire de Belfort",
-      "region_name": "Bourgogne-Franche-Comté"
+      "region": "Bourgogne-Franche-Comté"
     }
   ]
 }
