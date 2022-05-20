@@ -1,0 +1,20 @@
+<h1>Details de Departement : <span class="ticket">{{departement.libelle}}</span></h1>
+
+<div class="card">
+    <div class="card-image">
+        <img src="{{departement.photo}}" />
+    </div>
+    <div class="card-description">
+        <p class="text-title">{{departement.name}}</p>
+        <p class="text-body">Loconsectetur adipiscing do eiusmod tempor. Lorem ipsum dolor sitd corporis atqueamet consectetur adipisicing elit. Voluptate necessitatibus quidem soluta, sed alias sit et sint beatae voluptatibus obcaecati porro quo explicabo harum iusto enim libero! Est, doloremque dolorem?</p>
+        <p class="text-below">{{departement.region}}</p>
+    </div>
+</div>
+
+<div class="btnsNav">
+    <button (click)="goPrev()"><span>Previous</span></button>
+    <button (click)="goNext()"><span>Next</span></button>
+</div>
+<div class="btnBack">
+    <button (click)="goBack()"><span>Back</span></button>
+</div>

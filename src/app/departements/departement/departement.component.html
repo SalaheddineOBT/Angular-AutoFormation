@@ -6,8 +6,8 @@
         <div class="col col-2 col-bold">Libelle</div>
         <div class="col col-3 col-bold">Actions</div>
       </li>
-      <li class="table-row"  *ngFor="let item of data">
-        <div class="col col-1" data-label="ID :">{{item.id}}</div>
+      <li class="table-row" *ngFor="let item of data">
+        <div class="col col-1" data-label="ID :"  [class.selected]="isSelected(item.id)">{{item.id}}</div>
         <div class="col col-2" data-label="LIBELLE :">{{item.libelle}}</div>
         <div class="col col-3" data-label="ACTIONS :">
             <button class="button-75" role="button" (click)="naviateToDetails(item.id)" type="button">

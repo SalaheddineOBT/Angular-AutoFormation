@@ -93,6 +93,10 @@ h2{
 .responsive-table .col-4{
     flex-basis: 25%;
 }
+.selected{
+    background-color: #08668b;
+    color: #F8F2EA;
+}
 @media all and (max-width: 767px){
     .responsive-table .table-header{
         display: none;

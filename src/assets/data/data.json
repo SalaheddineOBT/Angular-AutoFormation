@@ -34,39 +34,45 @@
   "departements": [
     {
       "id": 10,
-      "name":"",
+      "name":"Rnets",
       "libelle": "departement 1",
-      "region":""
+      "region":"Gte hôr-ceven",
+        "photo":"https://maisondegaulle.fr/templates/maisonnatalecdg/images/various/homepage_illustration.jpg"
     },
     {
       "id": 20,
       "name": "Ain",
       "libelle": "departement 2",
-      "region": "Auvergne-Rhône-Alpes"
+      "region": "Auvergne-Rhône-Alpes",
+      "photo":"https://www.state.gov/wp-content/uploads/2019/04/31322529505_0257775f82_o-e1556309578824-768x432.jpg"
     },
     {
       "id": 30,
       "name": "Aisne",
       "libelle": "departement 3",
-      "region": "Hauts-de-France"
+      "region": "Hauts-de-France",
+      "photo":"https://share.america.gov/wp-content/uploads/2022/05/GettyImages-1240180485-1024x682.jpg"
     },
     {
       "id": 40,
       "name": "Alpes-Maritimes",
       "libelle": "departement 4",
-      "region": "Provence-Alpes-Côte d'Azur"
+      "region": "Provence-Alpes-Côte d'Azur",
+      "photo":"https://share.america.gov/wp-content/uploads/2022/05/Yasnohorodka_Ukraine_Russia_GettyImages-1239534444-1024x683.jpg"
     },
     {
       "id": 50,
       "name": "Bouches-du-Rhône",
       "libelle": "departement 1",
-      "region": "Provence-Alpes-Côte d'Azur"
+      "region": "Provence-Alpes-Côte d'Azur",
+      "photo":"https://share.america.gov/wp-content/uploads/2022/05/Ukraine_Mariupol_theater_war_damage_AP22094713545755-4.jpg"
     },
     {
       "id": 60,
       "name": "Territoire de Belfort",
       "libelle": "departement 2",
-      "region": "Bourgogne-Franche-Comté"
+      "region": "Bourgogne-Franche-Comté",
+      "photo":"https://share.america.gov/wp-content/uploads/2021/05/service-pnp-cph-3c00000-3c04000-3c04900-3c04973v_Jews_New_York_City_Jewish_Rosh_Hashanah_immigration-1024x720.jpg"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DepartementComponent } from './departements//departement/departement.component';
+import { DetailsdepartementComponent } from './departements/detailsdepartement/detailsdepartement.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -19,6 +20,9 @@ const routes: Routes = [
     },{
         path:'departement',
         component:DepartementComponent
+    },{
+        path:'detailDepartement/:id',
+        component:DetailsdepartementComponent
     },{
         path: '',
         redirectTo: '/login',
@@ -41,5 +45,6 @@ export const routingComponents=[
     HomeComponent,
     RegisterComponent,
     PageNotFoundComponent,
-    DepartementComponent
+    DepartementComponent,
+    DetailsdepartementComponent
 ];

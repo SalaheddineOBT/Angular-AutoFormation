@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartementService } from '../../services/departement.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute,ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-departement',
@@ -12,17 +12,27 @@ export class DepartementComponent implements OnInit {
 
   public data:any='';
 
-  constructor(private departementService:DepartementService,private router:Router) { }
+  public selectedId:any=null;
+
+  constructor(private departementService:DepartementService,private router:Router,private routeAct:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.departementService.getAllDepartements().subscribe(
         d => this.data = d,
         err => console.error(err.message)
     );
+
+    //this.selectedId=this.routeAct.snapshot.paramMap.get('id');
+    this.routeAct.paramMap.subscribe((params : ParamMap) => this.selectedId = params.get('id') );
+
   }
 
   naviateToDetails(id:any){
-    this.router.navigate(['/',id]);
+    this.router.navigate(['/detailDepartement',id]);
   };
+
+  isSelected = (id:any) => {
+    return id == this.selectedId;
+  }
   
 }
