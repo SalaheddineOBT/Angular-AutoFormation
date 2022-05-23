@@ -1,0 +1,40 @@
+//angular Instalation :
+npm i -g @angular/cli
+
+ng --version ; angular version
+
+ng serve : http://localhost:4200/
+
+npm install --save-dev @angular/cli@latest
+
+ng g c namecomp : create new Component
+
+ng g c name -it -is  : 
+it = inline temlate
+is: inline style
+
+ng g s nameService : generate new service
+
+ng add @angular/material
+: angular materiel
+
+npm install --save rxjs-compat 
+
+
+//Type Script :
+npm i  -g typescript
+tsc -v
+
+tsc main.ts : convertire to javascript code  it's give main.js .
+
+node maint.ts : display result in terminal .
+
+
+select a word and press F2 for rename in all the file where existe vcCode
+app.pluralsight.com
+
+
+express server :
+
+npm init --yes
+npm install --save express body-parser cors
