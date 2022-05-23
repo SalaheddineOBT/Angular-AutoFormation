@@ -38,3 +38,6 @@ express server :
 
 npm init --yes
 npm install --save express body-parser cors
+
+cd server
+node server
