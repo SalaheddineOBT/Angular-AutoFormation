@@ -12,6 +12,8 @@ import { NavComponent } from './nav/nav.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { LogenService } from './services/login.service';
 import { DepartementService } from './services/departement.service';
+import { LangueService } from './services/langue.service';
+import { MessageService } from './services/mesage.service';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { DepartementService } from './services/departement.service';
   providers: [
     PersonneService,
     LogenService,
-    DepartementService
+    DepartementService,
+    LangueService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
