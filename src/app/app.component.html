@@ -32,9 +32,14 @@
     <form [formGroup]="registrationForm">
         <div class="form-group">
             <label for="username">User Name</label>
-            <input formControlName="username" type="text" name="username" id="username">
+            <input formControlName="username"   [class.isinvalid]="userName?.invalid && userName?.touched"  type="text" name="username" id="username">
+            <!-- <small [style.color]="'red'" [class.d-none]="registrationForm.get('username')?.valiregistrationForm.get('username')d || registrationForm.get('username')?.untouched">User Name is Required !</small> -->
+            <div *ngIf="userName?.invalid && userName?.touched">
+                <small [style.color]="'red'" *ngIf="userName?.errors?.['required']" >User Name is Required !</small>
+                <small [style.color]="'red'" *ngIf="userName?.errors?.['minlength']">User Name must be at least 3 characters !</small>
+                <small [style.color]="'red'" *ngIf="userName?.errors?.['forbiddenNme']"> {{userName?.errors?.['forbiddenNme']?.['value']}} User Name not allowed !</small>
+            </div>
         </div>
-
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" formControlName="email" name="email" id="email">
@@ -50,8 +55,27 @@
             <input type="password" formControlName="confirm" name="confirm" id="confirm">
         </div>
 
+        <div formGroupName="adresse">
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input type="text" formControlName="street" name="street" id="street">
+            </div>
+    
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" formControlName="city" name="city" id="city">
+            </div>
+    
+            <div class="form-group">
+                <label for="postal">Postal Code</label>
+                <input type="text" formControlName="postal" name="postal" id="postal">
+            </div>
+        </div>
+
         <button class="btn" type="submit">Register</button>
     </form>
 
     {{registrationForm.value | json}}
+
+    <button class="btn" type="button" (click)="loading()">Load API Data</button>
 </div>

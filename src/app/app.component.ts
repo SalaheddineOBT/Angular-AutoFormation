@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { forbiddenNameValidator } from './shared/username.validator';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,67 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-    registrationForm = new FormGroup({
+    get userName(){ return this.registrationForm.get('username'); }
+    get email(){ return this.registrationForm.get('email'); }
+    get password(){ return this.registrationForm.get('password'); }
+    get confirm(){ return this.registrationForm.get('confirm'); }
+    get street(){ return this.registrationForm.get('street'); }
+    get city(){ return this.registrationForm.get('city'); }
+    get postal(){ return this.registrationForm.get('postal'); }
+
+    registrationForm1 = new FormGroup({
        username: new FormControl(''), 
        email: new FormControl(''), 
        password: new FormControl(''), 
-       confirm: new FormControl('')
+       confirm: new FormControl(''),
+       adresse:new FormGroup({
+        street: new FormControl(''), 
+        city: new FormControl(''), 
+        postal: new FormControl('')
+       })
     });
+
+    ngOnInit(): void {
+        
+    }
+
+    registrationForm=this.fb.group({
+        username:['',[Validators.required,Validators.minLength(3),forbiddenNameValidator(/password/)]],
+        email:['',Validators.required,],
+        password:['',Validators.required,],
+        confirm:['',Validators.required,],
+        adresse:this.fb.group({
+            street:['',Validators.required,],
+            city:['',Validators.required,],
+            postal:['',Validators.required,],
+        })
+    })
+
+    constructor(private fb:FormBuilder){}
+
+    loading(){
+        // this.registrationForm.setValue({
+        //     username:"salaheddine",
+        //     email:"salah@gmail.com",
+        //     password:"#@$#@$$$$$$$$$^%%&",
+        //     confirm:"#@$#@$$$$$$$$$^%%&",
+        //     adresse:{
+        //         street:"Clifornia",
+        //         city:"Tangier",
+        //         postal:"9600",
+        //     }
+        // });
+
+        this.registrationForm1.patchValue({
+            username:"salaheddine",
+            email:"salah@gmail.com",
+            password:"#@$#@$$$$$$$$$^%%&",
+            confirm:"#@$#@$$$$$$$$$^%%&"
+        });
+
+    }
 
   public title = 'myapp';
 
