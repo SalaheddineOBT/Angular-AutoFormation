@@ -74,5 +74,35 @@
       "region": "Bourgogne-Franche-Comté",
       "photo":"https://share.america.gov/wp-content/uploads/2021/05/service-pnp-cph-3c00000-3c04000-3c04900-3c04973v_Jews_New_York_City_Jewish_Rosh_Hashanah_immigration-1024x720.jpg"
     }
+  ],
+  "Langues":[
+    {
+        "id":1,
+        "langue":"Angular"
+    },{
+        "id":2,
+        "langue":"React"
+    },{
+        "id":3,
+        "langue":"Javascript"
+    },{
+        "id":1,
+        "langue":"C#.Net"
+    },{
+        "id":1,
+        "langue":"Bootstrap"
+    },{
+        "id":1,
+        "langue":"Vue"
+    },{
+        "id":1,
+        "langue":"Python"
+    },{
+        "id":1,
+        "langue":"JQuery"
+    },{
+        "id":1,
+        "langue":"SQL Server"
+    }
   ]
 }

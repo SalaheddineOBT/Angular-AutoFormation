@@ -48,6 +48,13 @@ h1{
     outline: none;
     border: 1.5px solid #11699c;
 }
+.top{
+    transform: translateY(-10%);
+    transform: translateY(-10%);
+    padding: 0;
+    color: #11699c;
+    background-color: #F3F1FB;
+}
 
 button {
     font-size: 1rem;

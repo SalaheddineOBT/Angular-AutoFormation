@@ -13,6 +13,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { LogenService } from './services/login.service';
 import { DepartementService } from './services/departement.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
