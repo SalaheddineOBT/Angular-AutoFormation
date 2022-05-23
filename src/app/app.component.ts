@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+
+    registrationForm = new FormGroup({
+       username: new FormControl(''), 
+       email: new FormControl(''), 
+       password: new FormControl(''), 
+       confirm: new FormControl('')
+    });
+
   public title = 'myapp';
 
   handleChange(data:any){

@@ -4,6 +4,7 @@ npm i -g @angular/cli
 ng --version ; angular version
 
 ng serve : http://localhost:4200/
+ng serve -o
 
 npm install --save-dev @angular/cli@latest
 

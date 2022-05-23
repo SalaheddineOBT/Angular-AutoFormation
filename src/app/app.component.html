@@ -23,9 +23,35 @@
 
 <!-- <button (click)="alertHello()">click me</button> -->
 
-
-
 <!-- <app-login (childEvent)="data=$event" [title]="title"></app-login> -->
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 
+<div class="container-luid">
+    <h2>Registration Form</h2>
+    <form [formGroup]="registrationForm">
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input formControlName="username" type="text" name="username" id="username">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" name="email" id="email">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" name="password" id="password">
+        </div>
+
+        <div class="form-group">
+            <label for="confirm">Comfirm Password</label>
+            <input type="password" formControlName="confirm" name="confirm" id="confirm">
+        </div>
+
+        <button class="btn" type="submit">Register</button>
+    </form>
+
+    {{registrationForm.value | json}}
+</div>
