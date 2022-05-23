@@ -1,0 +1,100 @@
+.cf{
+    width: 90%;
+    background-color: rgba(115, 90, 205, 0.082);
+    padding: 1rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+}
+h1{
+    text-align: center;
+    padding: 1rem;
+    color: #11699c;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.user-label {
+    position: absolute;
+    left: 15px;
+    color: #07060675;
+    pointer-events: none;
+    transform: translateY(15.5px);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+    background-color:  transparent;
+}
+.input:focus ~ label, input:valid ~ label {
+    transform: translateY(-10%);
+    padding: 0;
+    color: #11699c;
+    background-color: #F3F1FB;
+}
+.input1{
+    border: solid 1.5px #9e9e9e;
+    background: none;
+    padding: .5rem;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: .5rem;
+    color: #302e2e;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.input1:focus ~ label, .input1:valid ~ label {
+    transform: translateY(-10%);
+    padding: 0;
+    color: #11699c;
+    background-color: #F3F1FB;
+}
+.input1:focus, .input1:valid {
+    outline: none;
+    border: 1.5px solid #11699c;
+}
+
+button {
+    font-size: 1rem;
+    background: #11699c;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: .5rem;
+    transition: all 0.2s;
+    margin-top: 1rem;
+}
+button span {
+    display: block;
+    font-weight: 550;
+    font-size: 1rem;
+    letter-spacing: .05rem;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+button:hover span {
+    transform: translateX(5em);
+}
+button:active {
+    transform: scale(0.95);
+}
+@keyframes fly-1 {
+    from {
+     transform: translateY(0.1em);
+    }
+    to {
+     transform: translateY(-0.1em);
+    }
+}
