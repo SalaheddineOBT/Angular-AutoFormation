@@ -42,3 +42,7 @@ npm install --save express body-parser cors
 
 cd server
 node server
+
+ C:\Users\omar2\Desktop\ng-project> cd myapp
+ C:\Users\omar2\Desktop\ng-project\myapp>cd ..
+ C:\Users\omar2\Desktop\ng-project>

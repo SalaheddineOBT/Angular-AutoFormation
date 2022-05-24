@@ -29,7 +29,8 @@
 
 <div class="container-luid">
     <h2>Registration Form</h2>
-    <form [formGroup]="registrationForm">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
         <div class="form-group">
             <label for="username">User Name</label>
             <input formControlName="username"   [class.isinvalid]="userName?.invalid && userName?.touched"  type="text" name="username" id="username">
@@ -40,10 +41,18 @@
                 <small [style.color]="'red'" *ngIf="userName?.errors?.['forbiddenNme']"> {{userName?.errors?.['forbiddenNme']?.['value']}} User Name not allowed !</small>
             </div>
         </div>
+
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" formControlName="email" name="email" id="email">
+            <label for="email" >Email</label><br />
+            <button type="button" (click)="addAlternateEmail()">Add Email</button><br />
+            <input type="email" placeholder="Enter Email" [class.isinvalid]="email?.invalid && email?.touched" formControlName="email" name="email" id="email">
+            <small [style.color]="'red'" *ngIf="email?.touched && email?.errors?.['required']" >Email is Required !</small>
+            <div formArrayName="alternateEmails" *ngFor="let email of alternateEmails.controls;let i = index">
+                <input type="text" [formControlName]="i" />
+            </div>
         </div>
+
+        <input type="checkbox" formControlName="subscribe" />acepting conditionals ?<br /><br />
 
         <div class="form-group">
             <label for="password">Password</label>
@@ -52,10 +61,14 @@
 
         <div class="form-group">
             <label for="confirm">Comfirm Password</label>
-            <input type="password" formControlName="confirm" name="confirm" id="confirm">
+            <input type="password" [class.isinvalid]="registrationForm.errors?.['misMatch']" formControlName="confirm" name="confirm" id="confirm">
+            <!-- <small [style.color]="'red'" *ngIf="confirm?.invalid && confirm?.touched"> {{userName?.errors?.['forbiddenNme']?.['value']}} Confirm Password is required !</small> -->
+            <small [style.color]="'red'" *ngIf="registrationForm.errors?.['misMatch']"> {{userName?.errors?.['forbiddenNme']?.['value']}} Confirm Password is Incorrect !</small>
+            
         </div>
 
         <div formGroupName="adresse">
+
             <div class="form-group">
                 <label for="street">Street</label>
                 <input type="text" formControlName="street" name="street" id="street">
@@ -70,12 +83,15 @@
                 <label for="postal">Postal Code</label>
                 <input type="text" formControlName="postal" name="postal" id="postal">
             </div>
+
         </div>
 
-        <button class="btn" type="submit">Register</button>
+        <button [disabled]="!registrationForm.valid" class="btn" type="submit">Register</button>
+
     </form>
 
-    {{registrationForm.value | json}}
+    <!-- {{registrationForm.value | json}} -->
 
-    <button class="btn" type="button" (click)="loading()">Load API Data</button>
+    <!-- <button class="btn" type="button" (click)="loading()">Load API Data</button> -->
+
 </div>

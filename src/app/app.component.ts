@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { FormControl, FormGroup,FormBuilder,Validators,FormArray } from '@angular/forms';
+import { RegistrationService } from './services/registration.service';
+import { PasswordValidator } from './shared/password.validator';
 import { forbiddenNameValidator } from './shared/username.validator';
 
 @Component({
@@ -12,11 +14,31 @@ export class AppComponent implements OnInit {
 
     get userName(){ return this.registrationForm.get('username'); }
     get email(){ return this.registrationForm.get('email'); }
+
+    get alternateEmails(){ return this.registrationForm.get('alternateEmails') as FormArray; }
+
     get password(){ return this.registrationForm.get('password'); }
     get confirm(){ return this.registrationForm.get('confirm'); }
     get street(){ return this.registrationForm.get('street'); }
     get city(){ return this.registrationForm.get('city'); }
     get postal(){ return this.registrationForm.get('postal'); }
+
+    public arr=new FormArray([
+        new FormControl(),
+        new FormControl(),
+    ]);
+
+    addAlternateEmail(){
+        this.alternateEmails.push(this.fb.control(''));
+        this.arr.setValue(['Nancy','Drew']);
+        //console.log(this.arr.value);
+    };
+
+    onSubmit(){
+        //console.log(this.registrationForm.value);
+        this.registrationService.postData(this.registrationForm.value)
+        .subscribe( res => console.log('Success ! ',res), err => console.log('Error ! ',err) );
+    };
 
     registrationForm1 = new FormGroup({
        username: new FormControl(''), 
@@ -30,23 +52,32 @@ export class AppComponent implements OnInit {
        })
     });
 
+    registrationForm:any='';
+
     ngOnInit(): void {
-        
+        this.registrationForm=this.fb.group({
+            username:['',[Validators.required,Validators.minLength(3),forbiddenNameValidator(/password/)]],
+            email:['',Validators.required,],
+            password:['',Validators.required],
+            confirm:['',Validators.required,],
+            adresse:this.fb.group({
+                street:['',Validators.required,],
+                city:['',Validators.required,],
+                postal:['',Validators.required,],
+            }),
+            subscribe:[false],
+            alternateEmails:this.fb.array([]),
+        },{ validator : PasswordValidator });
+
+        this.registrationForm.get('subscribe').valueChanges.subscribe((val : any) => {
+            const email=this.email;
+            val ? email.setValidators(Validators.required) : email.clearValidators();
+
+            email.updateValueAndValidity();
+        });
     }
 
-    registrationForm=this.fb.group({
-        username:['',[Validators.required,Validators.minLength(3),forbiddenNameValidator(/password/)]],
-        email:['',Validators.required,],
-        password:['',Validators.required,],
-        confirm:['',Validators.required,],
-        adresse:this.fb.group({
-            street:['',Validators.required,],
-            city:['',Validators.required,],
-            postal:['',Validators.required,],
-        })
-    })
-
-    constructor(private fb:FormBuilder){}
+    constructor(private fb:FormBuilder,private registrationService:RegistrationService){}
 
     loading(){
         // this.registrationForm.setValue({

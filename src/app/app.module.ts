@@ -15,6 +15,7 @@ import { LogenService } from './services/login.service';
 import { DepartementService } from './services/departement.service';
 import { LangueService } from './services/langue.service';
 import { MessageService } from './services/mesage.service';
+import { RegistrationService } from './services/registration.service';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MessageService } from './services/mesage.service';
     LogenService,
     DepartementService,
     LangueService,
-    MessageService
+    MessageService,
+    RegistrationService
   ],
   bootstrap: [AppComponent]
 })
